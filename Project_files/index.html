@@ -4,16 +4,16 @@
 
     <title> Template </title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
-    <meta name="description" content="This ">
+    <meta content="This " name="description">
 
-    <meta name="author" content="Code With Mark">
-    <meta name="authorUrl" content="http://codewithmark.com">
+    <meta content="Code With Mark" name="author">
+    <meta content="http://codewithmark.com" name="authorUrl">
 
     <!--[CSS/JS Files - Start]-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -161,119 +161,173 @@
 </head>
 <body>
 
-<div class="text-center" style="padding:20px;">
-    <input type="button" id="rep" value="Print" class="btn btn-info btn_print">
+
+<div id="questions"
+     style="padding:50px; background-color: #dddddd; margin-bottom:5%; margin-left: 10%;  margin-right: 10%">
+    <h5 style="padding:10px">Invoice #: </h5>
+    <input type="text">
+    <h5 style="padding:10px">PO #: </h5>
+    <input type="text">
+    <h5 style="padding:10px">Bill to: </h5>
+    <input type="text">
+    <h5 style="padding:10px">Invoice #: </h5>
+    <input type="text">
+    <h5 style="padding:10px">Quantity: </h5>
+    <input type="number">
+    <h5 style="padding:10px">Description: </h5>
+    <input type="text">
+    <h5 style="padding:10px">Price per each: </h5>
+    <input type="text">
+    <h5 style="padding:10px">Amount: </h5>
+    <input type="number">
+    <h5 style="padding:10px">Invoice #: </h5>
+    <input type="text">
+
+    <div class="text-center" style="padding:20px;">
+        <input class="btn btn-info btn_print" id="rep" type="button" value="Print">
+        <input class="btn btn-info" id="edit-option" onclick="make_editable()" type="button" value="Direct Edit">
+        <input class="btn btn-info" id="preview-update" onclick="make_editable()" type="button" value="Update Preview">
+    </div>
 </div>
 
 
 <div class="container_content" id="container_content">
-<p class="s1" style="padding-top: 3pt;padding-left: 311pt;text-indent: 0pt;text-align: left;">QUOTATION</p>
-<h1 style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">1626134 Ontario Inc <span class="s2">DATE:     </span><span class="s3">April 13, 2023</span></h1>
-<h2 style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;">INVOICE # PO #</h2>
-<h2 style="padding-left: 302pt;text-indent: 0pt;line-height: 11pt;text-align: left;">BILL TO:</h2>
-<p style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;line-height: 162%;text-align: left;">37 Idleswift Dr Vaughan, ON L4J 1K9 647-866-7661</p>
-<p style="text-indent: 0pt;text-align: left;"><br/></p>
-<p style="padding-top: 7pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">Project or Service Description</p>
-<p style="text-indent: 0pt;text-align: left;"><br/></p>
-<table cellspacing="0" style="border-collapse:collapse;margin-left:5.5pt">
-    <tr style="height:32pt">
-        <td bgcolor="#D9D9D9"
-            style="width:59pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F"><p class="s4"
-                                 style="padding-top: 3pt;padding-left: 25pt;padding-right: 4pt;text-indent: -20pt;text-align: left;">
-            QUANTIT Y</p></td>
-        <td bgcolor="#D9D9D9"
-            style="width:233pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F"><p class="s4"
-                                 style="padding-top: 8pt;padding-left: 78pt;padding-right: 77pt;text-indent: 0pt;text-align: center;">
-            DESCRIPTION</p></td>
-        <td bgcolor="#D9D9D9"
-            style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F"><p class="s4"
-                                 style="padding-top: 3pt;padding-left: 20pt;padding-right: 18pt;text-indent: -1pt;text-align: left;">
-            PRICE EACH</p></td>
-        <td bgcolor="#D9D9D9"
-            style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F"><p class="s4"
-                                 style="padding-top: 8pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">
-            AMOUNT</p></td>
-    </tr>
-    <tr style="height:30pt">
-        <td rowspan="8"
-            style="width:59pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-        <td rowspan="8"
-            style="width:233pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-        <td rowspan="8"
-            style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-        <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-    </tr>
-    <tr style="height:30pt">
-        <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-    </tr>
-    <tr style="height:30pt">
-        <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-    </tr>
-    <tr style="height:30pt">
-        <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-    </tr>
-    <tr style="height:30pt">
-        <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-    </tr>
-    <tr style="height:30pt">
-        <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-    </tr>
-    <tr style="height:30pt">
-        <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-    </tr>
-    <tr style="height:30pt">
-        <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-    </tr>
-    <tr style="height:32pt">
-        <td colspan="2"
-            rowspan="4" style="width:292pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F"><p style="text-indent: 0pt;text-align: left;"><br/></p>
-            <p class="s5" style="padding-left: 4pt;text-indent: 0pt;text-align: left;">THANK YOU FOR YOUR BUSINESS!</p>
-            <p class="s6" style="padding-top: 7pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">HST#
-                856136874</p></td>
-        <td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p class="s7"
-               style="padding-top: 3pt;padding-right: 3pt;text-indent: 0pt;line-height: 12pt;text-align: right;">
-                SUBTOTA</p>
-            <p class="s7" style="padding-right: 3pt;text-indent: 0pt;line-height: 12pt;text-align: right;">L</p></td>
-        <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p style="text-indent: 0pt;text-align: left;"><br/></p>
-            <p class="s6" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p></td>
-    </tr>
-    <tr style="height:33pt">
-        <td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p class="s7"
-               style="padding-top: 3pt;padding-left: 11pt;padding-right: 3pt;text-indent: 34pt;text-align: left;">HST
-                (ON)@13%</p></td>
-        <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p style="text-indent: 0pt;text-align: left;"><br/></p>
-            <p class="s6" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p></td>
-    </tr>
-    <tr style="height:21pt">
-        <td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p class="s7" style="padding-top: 4pt;padding-right: 3pt;text-indent: 0pt;text-align: right;">OTHER</p></td>
-        <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p class="s6" style="padding-top: 4pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p></td>
-    </tr>
-    <tr style="height:29pt">
-        <td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-            <p style="text-indent: 0pt;text-align: left;"><br/></p>
-            <p class="s5" style="padding-right: 3pt;text-indent: 0pt;text-align: right;">TOTAL</p></td>
-        <td bgcolor="#F2F2F2"
-            style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F"><p style="text-indent: 0pt;text-align: left;"><br/></p>
-            <p class="s4" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p></td>
-    </tr>
-</table>
+    <p class="s1" style="padding-top: 3pt;padding-left: 311pt;text-indent: 0pt;text-align: left;">QUOTATION</p>
+    <h1 style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">1626134 Ontario Inc <span
+            class="s2">DATE:     </span><span class="s3">April 13, 2023</span></h1>
+    <h2 style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;">INVOICE # PO
+        #</h2>
+    <h2 style="padding-left: 302pt;text-indent: 0pt;line-height: 11pt;text-align: left;">BILL TO:</h2>
+    <p style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;line-height: 162%;text-align: left;">37 Idleswift Dr
+        Vaughan, ON L4J 1K9 647-866-7661</p>
+    <p style="text-indent: 0pt;text-align: left;"><br/></p>
+    <p style="padding-top: 7pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">Project or Service Description</p>
+    <p style="text-indent: 0pt;text-align: left;"><br/></p>
+    <table cellspacing="0" style="border-collapse:collapse;margin-left:5.5pt">
+        <tr style="height:32pt">
+            <td bgcolor="#D9D9D9"
+                style="width:59pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p class="s4"
+                   style="padding-top: 3pt;padding-left: 25pt;padding-right: 4pt;text-indent: -20pt;text-align: left;">
+                    QUANTIT Y</p></td>
+            <td bgcolor="#D9D9D9"
+                style="width:233pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p class="s4"
+                   style="padding-top: 8pt;padding-left: 78pt;padding-right: 77pt;text-indent: 0pt;text-align: center;">
+                    DESCRIPTION</p></td>
+            <td bgcolor="#D9D9D9"
+                style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p class="s4"
+                   style="padding-top: 3pt;padding-left: 20pt;padding-right: 18pt;text-indent: -1pt;text-align: left;">
+                    PRICE EACH</p></td>
+            <td bgcolor="#D9D9D9"
+                style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p class="s4"
+                   style="padding-top: 8pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">
+                    AMOUNT</p></td>
+        </tr>
+        <tr style="height:30pt">
+            <td rowspan="8"
+                style="width:59pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+            <td rowspan="8"
+                style="width:233pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+            <td rowspan="8"
+                style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+            <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+        </tr>
+        <tr style="height:30pt">
+            <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+        </tr>
+        <tr style="height:30pt">
+            <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+        </tr>
+        <tr style="height:30pt">
+            <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+        </tr>
+        <tr style="height:30pt">
+            <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+        </tr>
+        <tr style="height:30pt">
+            <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+        </tr>
+        <tr style="height:30pt">
+            <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+        </tr>
+        <tr style="height:30pt">
+            <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+        </tr>
+        <tr style="height:32pt">
+            <td colspan="2"
+                rowspan="4"
+                style="width:292pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s5" style="padding-left: 4pt;text-indent: 0pt;text-align: left;">THANK YOU FOR YOUR
+                    BUSINESS!</p>
+                <p class="s6" style="padding-top: 7pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">HST#
+                    856136874</p></td>
+            <td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p class="s7"
+                   style="padding-top: 3pt;padding-right: 3pt;text-indent: 0pt;line-height: 12pt;text-align: right;">
+                    SUBTOTA</p>
+                <p class="s7" style="padding-right: 3pt;text-indent: 0pt;line-height: 12pt;text-align: right;">L</p>
+            </td>
+            <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s6" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p></td>
+        </tr>
+        <tr style="height:33pt">
+            <td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p class="s7"
+                   style="padding-top: 3pt;padding-left: 11pt;padding-right: 3pt;text-indent: 34pt;text-align: left;">
+                    HST
+                    (ON)@13%</p></td>
+            <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s6" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p></td>
+        </tr>
+        <tr style="height:21pt">
+            <td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p class="s7" style="padding-top: 4pt;padding-right: 3pt;text-indent: 0pt;text-align: right;">OTHER</p>
+            </td>
+            <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p class="s6" style="padding-top: 4pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p>
+            </td>
+        </tr>
+        <tr style="height:29pt">
+            <td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s5" style="padding-right: 3pt;text-indent: 0pt;text-align: right;">TOTAL</p></td>
+            <td bgcolor="#F2F2F2"
+                style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;"><br/></p>
+                <p class="s4" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p></td>
+        </tr>
+    </table>
 
 </div>
 
+<script>
+    function make_editable() {
+        if (document.getElementById("container_content").contentEditable === "true") {
+            document.getElementById("container_content").contentEditable = "false";
+            document.getElementById("edit-option").value = "Direct Editing";
+        } else {
+            document.getElementById("container_content").contentEditable = "true";
+            document.getElementById("edit-option").value = "Stop Editing";
+        }
+    }
+</script>
 
 </body>
 </html>
