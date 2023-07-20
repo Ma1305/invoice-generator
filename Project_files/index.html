@@ -164,80 +164,66 @@
 
 <div id="questions"
      style="padding:50px; background-color: #dddddd; margin-bottom:5%; margin-left: 10%;  margin-right: 10%">
+    <h5 style="padding:10px">Date: </h5>
+    <input type="date" id="date">
     <h5 style="padding:10px">Invoice #: </h5>
-    <input type="text">
+    <input type="text" id="invoice_number">
     <h5 style="padding:10px">PO #: </h5>
-    <input type="text">
+    <input type="text" id="PO_number">
     <h5 style="padding:10px">Bill to: </h5>
-    <input type="text">
-    <h5 style="padding:10px">Invoice #: </h5>
-    <input type="text">
+    <input type="text" id="bill_to">
     <h5 style="padding:10px">Quantity: </h5>
-    <input type="number">
+    <input type="number" id="quantity">
+    <h5 style="padding:10px">Address: </h5>
+    <input type="text" id="address">
+    <h5 style="padding:10px">Project Description: </h5>
+    <input type="text" id="project_description">
     <h5 style="padding:10px">Description: </h5>
-    <input type="text">
+    <input type="text" id="description">
     <h5 style="padding:10px">Price per each: </h5>
-    <input type="text">
+    <input type="text" id="price_per_each">
     <h5 style="padding:10px">Amount: </h5>
-    <input type="number">
-    <h5 style="padding:10px">Invoice #: </h5>
-    <input type="text">
+    <input type="number" id="amount">
 
     <div class="text-center" style="padding:20px;">
         <input class="btn btn-info btn_print" id="rep" type="button" value="Print">
         <input class="btn btn-info" id="edit-option" onclick="make_editable()" type="button" value="Direct Edit">
-        <input class="btn btn-info" id="preview-update" onclick="make_editable()" type="button" value="Update Preview">
+        <input class="btn btn-info" id="preview-update" onclick="update_preview()" type="button" value="Update Preview">
     </div>
 </div>
 
 
 <div class="container_content" id="container_content">
     <p class="s1" style="padding-top: 3pt;padding-left: 311pt;text-indent: 0pt;text-align: left;">QUOTATION</p>
-    <h1 style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">1626134 Ontario Inc <span
-            class="s2">DATE:     </span><span class="s3">April 13, 2023</span></h1>
-    <h2 style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;">INVOICE # PO
-        #</h2>
-    <h2 style="padding-left: 302pt;text-indent: 0pt;line-height: 11pt;text-align: left;">BILL TO:</h2>
-    <p style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;line-height: 162%;text-align: left;">37 Idleswift Dr
-        Vaughan, ON L4J 1K9 647-866-7661</p>
+    <h1 style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">1626134 Ontario Inc <span class="s2">DATE:     </span><span class="s3" id="date_holder">April 13, 2023</span></h1>
+    <h2 style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;" id="invoice_number_holder">INVOICE # PO #</h2>
+    <h2 style="padding-left: 302pt;text-indent: 0pt;line-height: 11pt;text-align: left;" id="bill_to_holder">BILL TO:</h2>
+    <p style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;line-height: 162%;text-align: left;" id="address_holder">37 Idleswift Dr Vaughan, ON L4J 1K9 647-866-7661</p>
     <p style="text-indent: 0pt;text-align: left;"><br/></p>
-    <p style="padding-top: 7pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">Project or Service Description</p>
+    <p style="padding-top: 7pt;padding-left: 10pt;text-indent: 0pt;text-align: left;" id="project_description_holder">Project or Service Description</p>
     <p style="text-indent: 0pt;text-align: left;"><br/></p>
     <table cellspacing="0" style="border-collapse:collapse;margin-left:5.5pt">
         <tr style="height:32pt">
             <td bgcolor="#D9D9D9"
                 style="width:59pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                <p class="s4"
-                   style="padding-top: 3pt;padding-left: 25pt;padding-right: 4pt;text-indent: -20pt;text-align: left;">
-                    QUANTIT Y</p></td>
-            <td bgcolor="#D9D9D9"
-                style="width:233pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                <p class="s4"
-                   style="padding-top: 8pt;padding-left: 78pt;padding-right: 77pt;text-indent: 0pt;text-align: center;">
-                    DESCRIPTION</p></td>
+                <p class="s4" style="padding-top: 3pt;padding-left: 25pt;padding-right: 4pt;text-indent: -20pt;text-align: left;">QUANTITY</p></td>
+            <td bgcolor="#D9D9D9" style="width:233pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p class="s4" style="padding-top: 8pt;padding-left: 78pt;padding-right: 77pt;text-indent: 0pt;text-align: center;">DESCRIPTION</p></td>
             <td bgcolor="#D9D9D9"
                 style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                <p class="s4"
-                   style="padding-top: 3pt;padding-left: 20pt;padding-right: 18pt;text-indent: -1pt;text-align: left;">
-                    PRICE EACH</p></td>
-            <td bgcolor="#D9D9D9"
-                style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                <p class="s4"
-                   style="padding-top: 8pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">
-                    AMOUNT</p></td>
+                <p class="s4" style="padding-top: 3pt;padding-left: 20pt;padding-right: 18pt;text-indent: -1pt;text-align: left;">PRICE EACH</p></td>
+            <td bgcolor="#D9D9D9" style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p class="s4" style="padding-top: 8pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">AMOUNT</p></td>
         </tr>
         <tr style="height:30pt">
-            <td rowspan="8"
-                style="width:59pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-            <td rowspan="8"
-                style="width:233pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-            <td rowspan="8"
-                style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+            <td rowspan="8" style="width:59pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;" id="quantity_holder"><br/></p></td>
+            <td rowspan="8" style="width:233pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;" id="description_holder"><br></p></td>
+            <td rowspan="8" style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
+                <p style="text-indent: 0pt;text-align: left;" id="price_per_each_holder"><br/></p></td>
             <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                <p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+                <p style="text-indent: 0pt;text-align: left;" id="amount_holder"><br/></p></td>
         </tr>
         <tr style="height:30pt">
             <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
@@ -326,6 +312,18 @@
             document.getElementById("container_content").contentEditable = "true";
             document.getElementById("edit-option").value = "Stop Editing";
         }
+    }
+
+    function update_preview() {
+        document.getElementById("invoice_number_holder").innerHTML = "Invoice #: " + document.getElementById("invoice_number").value + "      PO #: " + document.getElementById("PO_number").value;
+        document.getElementById("bill_to_holder").innerHTML = "Bill to: " + document.getElementById("bill_to").value;
+        document.getElementById("quantity_holder").innerHTML = document.getElementById("quantity").value;
+        document.getElementById("address_holder").placeholder = document.getElementById("address").value;
+        document.getElementById("project_description_holder").placeholder = document.getElementById("project_description").value;
+        document.getElementById("description_holder").placeholder = document.getElementById("description").value;
+        document.getElementById("price_per_each_holder").placeholder = document.getElementById("price_per_each").value;
+        document.getElementById("amount_holder").placeholder = document.getElementById("amount").value;
+
     }
 </script>
 
