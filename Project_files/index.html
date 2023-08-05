@@ -236,8 +236,11 @@
         <h1 style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">1626134 Ontario Inc <span
                 class="s2">DATE:     </span><span class="s3" id="date_holder">April 13, 2023</span></h1>
         <h2 id="invoice_number_holder"
-            style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;">INVOICE #
-            PO #</h2>
+            style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;">INVOICE
+            #: </h2>
+        <h2 id="po_number_holder"
+            style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;">PO
+            #: </h2>
         <h2 id="bill_to_holder" style="padding-left: 302pt;text-indent: 0pt;line-height: 11pt;text-align: left;">BILL
             TO:</h2>
         <p id="address_holder"
@@ -345,19 +348,36 @@
     }
 
     function update_preview() {
-        document.getElementById("invoice_number_holder").textContent = "Invoice #: " + document.getElementById("invoice_number").value + "      PO #: " + document.getElementById("PO_number").value;
-        document.getElementById("bill_to_holder").textContent = "Bill to: " + document.getElementById("bill_to").value;
-        document.getElementById("address_holder").textContent = document.getElementById("address").value;
-        document.getElementById("project_description_holder").textContent = document.getElementById("project_description").value;
-        document.getElementById("description_holder").textContent = document.getElementById("description").value;
+        const invoice_number = document.getElementById("invoice_number").value;
+        if (!(invoice_number === "")) {
+            document.getElementById("invoice_number_holder").textContent = "Invoice #: " + invoice_number;
+        }
+        const po_number = document.getElementById("PO_number").value;
+        if (!(po_number === "")) {
+            document.getElementById("po_number_holder").textContent = "PO #: " + po_number;
+        }
+        const bill_to = document.getElementById("bill_to").value;
+        if (!(bill_to === "")) {
+            document.getElementById("bill_to_holder").textContent = "Bill to: " + bill_to;
+        }
+        const address = document.getElementById("address").value;
+        if (!(address === "")) {
+            document.getElementById("address_holder").textContent = address;
+        }
+        const project_description = document.getElementById("project_description").value;
+        if (!(project_description === "")) {
+            document.getElementById("project_description_holder").textContent = project_description;
+        }
+
+        /*document.getElementById("description_holder").textContent = document.getElementById("description").value;
 
         document.getElementById("quantity_holder").textContent = document.getElementById("quantity").value;
-        document.getElementById("price_per_each_holder").textContent = document.getElementById("price_per_each").value;
+        document.getElementById("price_per_each_holder").textContent = document.getElementById("price_per_each").value;*/
 
     }
 
     function calculate_data() {
-        const price_per_each =  document.getElementById("quantity_holder").textContent;
+        const price_per_each = document.getElementById("quantity_holder").textContent;
         const quantity = document.getElementById("price_per_each_holder").textContent;
         document.getElementById("amount_holder").textContent = parseInt(price_per_each) * parseInt(quantity);
     }
