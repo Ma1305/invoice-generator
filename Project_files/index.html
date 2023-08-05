@@ -226,6 +226,8 @@
             <input class="btn btn-info" id="edit-option" onclick="make_editable()" type="button" value="Direct Edit">
             <input class="btn btn-info" id="preview-update" onclick="update_preview()" type="button"
                    value="Update Preview">
+            <input class="btn btn-info" id="calculate-numbers" onclick="calculate_data()" type="button"
+                   value="Calculate">
         </div>
     </div>
 
@@ -335,6 +337,7 @@
         if (document.getElementById("container_content").contentEditable === "true") {
             document.getElementById("container_content").contentEditable = "false";
             document.getElementById("edit-option").value = "Direct Editing";
+            calculate_data();
         } else {
             document.getElementById("container_content").contentEditable = "true";
             document.getElementById("edit-option").value = "Stop Editing";
@@ -348,12 +351,15 @@
         document.getElementById("project_description_holder").textContent = document.getElementById("project_description").value;
         document.getElementById("description_holder").textContent = document.getElementById("description").value;
 
-        const price_per_each = document.getElementById("price_per_each").value;
-        const quantity = document.getElementById("quantity").value;
-        document.getElementById("quantity_holder").textContent = quantity;
-        document.getElementById("price_per_each_holder").textContent = price_per_each;
-        document.getElementById("amount_holder").textContent = parseInt(price_per_each) * parseInt(quantity);
+        document.getElementById("quantity_holder").textContent = document.getElementById("quantity").value;
+        document.getElementById("price_per_each_holder").textContent = document.getElementById("price_per_each").value;
 
+    }
+
+    function calculate_data() {
+        const price_per_each =  document.getElementById("quantity_holder").textContent;
+        const quantity = document.getElementById("price_per_each_holder").textContent;
+        document.getElementById("amount_holder").textContent = parseInt(price_per_each) * parseInt(quantity);
     }
 
     /*
