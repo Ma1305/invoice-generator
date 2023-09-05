@@ -207,18 +207,11 @@
         <input class="form-control mb-3" id="address" type="text">
         <h5 class="mb-3">Project Description:</h5>
         <input class="form-control mb-3" id="project_description" type="text">
-        <h5 class="mb-3">Number of Items:</h5>
-        <input class="form-control mb-3" id="item_quantity" type="number">
-
-        <!--button class="btn btn-info" id="expandButton">Hide/Unhide</button -->
-        <div id="expandableContent">
-            <h5 class="mb-3">Quantity:</h5>
-            <input class="form-control mb-3" id="quantity" type="number">
-            <h5 class="mb-3">Description:</h5>
-            <input class="form-control mb-3" id="description" type="text">
-            <h5 class="mb-3">Price per each:</h5>
-            <input class="form-control mb-3" id="price_per_each" type="text">
-        </div>
+        <input class="btn" id="add_item_button" onclick="add_item()" style="background-color: greenyellow"
+               type="button"
+               value="Add Item">
+        <input class="btn" id="remove_item_button" onclick="remove_item()" style="background-color: red"
+               type="button" value="Remove Item">
 
 
         <div class="text-center mt-4">
@@ -236,13 +229,13 @@
         <h1 style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">1626134 Ontario Inc <span
                 class="s2">DATE:     </span><span class="s3" id="date_holder">April 13, 2023</span></h1>
         <h2 id="invoice_number_holder"
-            style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;">INVOICE
+            style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;">Invoice
             #: </h2>
         <h2 id="po_number_holder"
             style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;">PO
             #: </h2>
-        <h2 id="bill_to_holder" style="padding-left: 302pt;text-indent: 0pt;line-height: 11pt;text-align: left;">BILL
-            TO:</h2>
+        <h2 id="bill_to_holder" style="padding-left: 302pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Bill
+            to:</h2>
         <p id="address_holder"
            style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;line-height: 162%;text-align: left;">37 Idleswift
             Dr Vaughan, ON L4J 1K9 647-866-7661</p>
@@ -266,22 +259,23 @@
                 <td bgcolor="#D9D9D9"
                     style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
                     <p class="s4"
-                       style="padding-top: 3pt;padding-left: 20pt;padding-right: 18pt;text-indent: -1pt;text-align: left;">
+                       style="padding-top: 3pt;padding-left: 20pt;padding-right: 18pt;text-indent: -1pt;text-align: center;">
                         PRICE PER EACH</p></td>
                 <td bgcolor="#D9D9D9"
                     style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                    <p class="s4" style="padding-top: 8pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">
+                    <p class="s4"
+                       style="padding-top: 8pt; padding-right:10pt; padding-left:10pt;text-indent: 0pt;text-align: center;">
                         AMOUNT</p></td>
             </tr>
-            <tr style="height:30pt">
+            <tr id="item-1" style="height:30pt">
                 <td style="width:59pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                    <p id="quantity_holder" style="text-indent: 0pt;text-align: left;"><br/></p></td>
+                    <p id="quantity_holder-1" style="text-indent: 0pt;text-align: center;"><br/></p></td>
                 <td style="width:233pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                    <p id="description_holder" style="text-indent: 0pt;text-align: left;"><br></p></td>
+                    <p id="description_holder-1" style="text-indent: 0pt;text-align: left;"><br></p></td>
                 <td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                    <p id="price_per_each_holder" style="text-indent: 0pt;text-align: left;"><br/></p></td>
+                    <p id="price_per_each_holder-1" style="text-indent: 0pt;text-align: center;"><br/></p></td>
                 <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                    <p id="amount_holder" style="text-indent: 0pt;text-align: left;"><br/></p></td>
+                    <p id="amount_holder-1" style="text-indent: 0pt;text-align: center;">$ -<br/></p></td>
             </tr>
 
             <tr style="height:32pt">
@@ -300,7 +294,8 @@
                 </td>
                 <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
                     <p style="text-indent: 0pt;text-align: left;"><br/></p>
-                    <p class="s6" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p></td>
+                    <p class="s6" id="subtotal_holder" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$
+                        -</p></td>
             </tr>
             <tr style="height:33pt">
                 <td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
@@ -309,7 +304,8 @@
                         HST (ON) 13%</p></td>
                 <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
                     <p style="text-indent: 0pt;text-align: left;"><br/></p>
-                    <p class="s6" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p></td>
+                    <p class="s6" id="hst_holder" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p>
+                </td>
             </tr>
             <tr style="height:21pt">
                 <td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
@@ -317,7 +313,8 @@
                         OTHER</p>
                 </td>
                 <td style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
-                    <p class="s6" style="padding-top: 4pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p>
+                    <p class="s6" id="other_cost_holder"
+                       style="padding-top: 4pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p>
                 </td>
             </tr>
             <tr style="height:29pt">
@@ -327,7 +324,8 @@
                 <td bgcolor="#F2F2F2"
                     style="width:103pt;border-top-style:solid;border-top-width:1pt;border-top-color:#7F7F7F;border-left-style:solid;border-left-width:1pt;border-left-color:#7F7F7F;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#7F7F7F;border-right-style:solid;border-right-width:1pt;border-right-color:#7F7F7F">
                     <p style="text-indent: 0pt;text-align: left;"><br/></p>
-                    <p class="s4" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$ -</p></td>
+                    <p class="s4" id="total_holder" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">$
+                        -</p></td>
             </tr>
         </table>
 
@@ -366,32 +364,71 @@
         if (!(project_description === "")) {
             document.getElementById("project_description_holder").textContent = project_description;
         }
+        let date = document.getElementById("date").value;
+        if (!(date === "")) {
+            date = format_date(date + "T00:00:00");
+            document.getElementById("date_holder").textContent = date;
+        }
+    }
 
-        /*document.getElementById("description_holder").textContent = document.getElementById("description").value;
+    function format_date(date) {
+        let selectedDate = new Date(date);
+        let monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
 
-        document.getElementById("quantity_holder").textContent = document.getElementById("quantity").value;
-        document.getElementById("price_per_each_holder").textContent = document.getElementById("price_per_each").value;*/
-
+        let day = selectedDate.getDate();
+        let month = monthNames[selectedDate.getMonth()];
+        let year = selectedDate.getFullYear();
+        return month + " " + day + ", " + year;
     }
 
     function calculate_data() {
-        const price_per_each = document.getElementById("quantity_holder").textContent;
-        const quantity = document.getElementById("price_per_each_holder").textContent;
-        document.getElementById("amount_holder").textContent = parseInt(price_per_each) * parseInt(quantity);
+        let total = 0;
+        for (let i = 1; i <= window.last_item_id; i++) {
+            const price_per_each = document.getElementById("quantity_holder-" + i).textContent;
+            const quantity = document.getElementById("price_per_each_holder-" + i).textContent;
+            const amount = parseInt(price_per_each) * parseInt(quantity);
+            if (!isNaN(amount)) {
+                document.getElementById("amount_holder-" + i).textContent = "$" + amount.toFixed(2).toString();
+                total += amount;
+            }
+        }
+        let subtotal_element = document.getElementById("subtotal_holder");
+        subtotal_element.textContent = "$" + total.toFixed(2).toString();
+        let hst_element = document.getElementById("hst_holder");
+        hst_element.textContent = "$" + (total * 0.13).toFixed(2).toString();
+        let total_element = document.getElementById("total_holder");
+        total_element.textContent = "$" + (total * 1.13).toFixed(2).toString();
     }
 
-    /*
-    hiding and unhiding the items
-    const expandButton = document.getElementById("expandButton");
-    const expandableContent = document.getElementById("expandableContent");
+    window.last_item_id = 1;
 
-    expandButton.addEventListener("click", function () {
-        if (expandableContent.style.display === "none") {
-            expandableContent.style.display = "block";
-        } else {
-            expandableContent.style.display = "none";
+    function add_item() {
+        let last_item_element = document.getElementById("item-" + window.last_item_id.toString());
+        let new_item_element = last_item_element.cloneNode(true);
+        last_item_element.insertAdjacentElement('afterend', new_item_element);
+
+        window.last_item_id += 1;
+        new_item_element.id = "item-" + window.last_item_id;
+        let nodes = new_item_element.childNodes;
+        for (let i = 0; i < nodes.length; i++) {
+            if (nodes[i].childNodes.length > 0) {
+                nodes[i].childNodes[1].id = nodes[i].childNodes[1].id.replace((window.last_item_id - 1), window.last_item_id);
+            }
         }
-    });*/
+    }
+
+    function remove_item() {
+        if (window.last_item_id <= 1) {
+            alert("You need at least one item!")
+            return
+        }
+        let last_item_element = document.getElementById("item-" + window.last_item_id.toString());
+        last_item_element.remove();
+        window.last_item_id -= 1;
+    }
 </script>
 
 </body>
