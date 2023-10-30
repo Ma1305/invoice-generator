@@ -171,11 +171,11 @@
                 //more custom settings
                 var opt =
                     {
-                        margin: 1,
+                        margin: 0,
                         filename: 'pageContent_' + js.AutoCode() + '.pdf',
                         image: {type: 'jpeg', quality: 0.98},
                         html2canvas: {scale: 2},
-                        jsPDF: {unit: 'in', format: 'tabloid', orientation: 'portrait'}
+                        jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
                     };
 
                 // New Promise-based usage:
@@ -196,10 +196,12 @@
 <div class="container_wrapper">
     <div class="container mt-5" id="questions">
         <p class="btn">
-            <a href="files/pages/home.html" class="mb-3 btn" style="background-color: #ffeeba; color:black">Home page</a>
+            <a class="mb-3 btn" href="files/pages/home.html" style="background-color: #ffeeba; color:black">Home
+                page</a>
         </p>
         <p class="btn">
-            <a href="files/pages/help.html" class="mb-3 btn" style="background-color: #ffeeba; color:black">Help page</a>
+            <a class="mb-3 btn" href="files/pages/help.html" style="background-color: #ffeeba; color:black">Help
+                page</a>
             <br>
         </p>
         <h5 class="mb-3">Date:</h5>
@@ -212,8 +214,6 @@
         <input class="form-control mb-3" id="bill_to" type="text">
         <h5 class="mb-3">Address:</h5>
         <input class="form-control mb-3" id="address" type="text">
-        <h5 class="mb-3">Project Description:</h5>
-        <input class="form-control mb-3" id="project_description" type="text">
         <input class="btn" id="add_item_button" onclick="add_item()" style="background-color: greenyellow"
                type="button"
                value="Add Item">
@@ -233,19 +233,52 @@
 
     <div class="container_content" id="container_content">
         <p class="s1" style="padding-top: 3pt;padding-left: 311pt;text-indent: 0pt;text-align: left;">QUOTATION</p>
-        <h1 style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">1626134 Ontario Inc <span
-                class="s2">DATE:     </span><span class="s3" id="date_holder">April 13, 2023</span></h1>
-        <h2 id="invoice_number_holder"
-            style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;">Invoice
-            #: </h2>
-        <h2 id="po_number_holder"
-            style="padding-top: 8pt;padding-left: 302pt;text-indent: 0pt;line-height: 174%;text-align: left;">PO
-            #: </h2>
-        <h2 id="bill_to_holder" style="padding-left: 302pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Bill
-            to:</h2>
-        <p id="address_holder"
-           style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;line-height: 162%;text-align: left;">37 Idleswift
-            Dr Vaughan, ON L4J 1K9 647-866-7661</p>
+        <table>
+            <tr>
+                <td style="width: 390px">
+                    <h2 style="padding-top: 8pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">
+                        1626134 Ontario Inc
+                    </h2>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="4" colspan="1" style="vertical-align: top">
+                    <p id="address_holder"
+                       style="margin: 0; text-indent: 0pt; line-height: 20px;text-align: left; vertical-align: top">
+                        37 Idleswift Dr Vaughan, ON L4J 1K9 647-866-7661
+                    </p>
+                </td>
+                <td style="padding: 0; padding-left: 30px">
+                    <h5 style="margin: 0; line-height: 20px"><span class="s2">DATE:     </span><span class="s3" id="date_holder">April 13, 2023</span>
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 0; padding-left: 30px">
+                    <h5 id="invoice_number_holder"
+                        style="margin: 0; text-indent: 0pt;line-height: 20px;text-align: left;">
+                        Invoice #:
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 0; padding-left: 30px">
+                    <h5 id="po_number_holder" style="margin: 0; text-indent: 0pt;line-height: 20px;text-align: left;">PO
+                        #: </h5>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 0; padding-left: 30px">
+                    <h5 id="bill_to_holder" style="margin: 0; text-indent: 0pt;line-height: 20px;text-align: left;">Bill
+                        to:</h5>
+                </td>
+            </tr>
+        </table>
+
+
         <p style="text-indent: 0pt;text-align: left;"><br/></p>
         <p id="project_description_holder"
            style="padding-top: 7pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">Project or Service
@@ -366,10 +399,6 @@
         const address = document.getElementById("address").value;
         if (!(address === "")) {
             document.getElementById("address_holder").textContent = address;
-        }
-        const project_description = document.getElementById("project_description").value;
-        if (!(project_description === "")) {
-            document.getElementById("project_description_holder").textContent = project_description;
         }
         let date = document.getElementById("date").value;
         if (!(date === "")) {
